@@ -1,23 +1,30 @@
 ---
-import { Image } from "astro:assets"
+import { Image } from "astro:assets";
 
-import cyberrot from '../images/cyberrot.gif';
-import digitalMe from '../images/digitalme.gif';
+import cyberrot from "../images/cyberrot.gif";
+import digitalMe from "../images/digitalme.gif";
 
 const images = [
   {
     src: cyberrot,
-    alt: 'hands typing keyboard gif in a retro style'
+    alt: "hands typing keyboard gif in a retro style",
   },
   {
     src: digitalMe,
-    alt: 'retro badged saying digital me, you know like the 90s'
-  }
-]
-
+    alt: "retro badged saying digital me, you know like the 90s",
+  },
+];
 ---
-<footer class="border-white border flex justify-center items-center gap-10 py-5" style="grid-area: footer;">
-    {images.map(({src,alt}) => (
-    <Image src={src} alt={alt} width={88} height={31} class="max-h-[31px]" />
-  ))}
+
+<footer
+  class="border-white border-t flex justify-center items-center gap-10 py-5"
+  style="grid-area: footer;"
+>
+  {
+    images.map(({ src, alt }) => (
+      <div class="max-w-16">
+        <Image src={src} alt={alt} />
+      </div>
+    ))
+  }
 </footer>

@@ -1,90 +1,120 @@
 ---
 interface Props {
-	title: string;
+  title: string;
   greet: string;
 }
 
 const { title, greet } = Astro.props;
 
-import Header  from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Navigation from '../components/Navigation.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body  class="flex items-center justify-center min-h-screen">
-    <div class="frame text-text bg-base w-[95vw] h-[95vh] shadow-none rounded-t-lg overflow-hidden border-rosewater border-2 md:w-[85vw] md:h-[85vh]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="flex items-center justify-center min-h-screen">
+    <div
+      class="frame text-text bg-base w-[100vw] h-[100vh] shadow-rosewater md:rounded-t-lg overflow-hidden border-rosewater md:border-2 md:w-[85vw] md:h-[85vh]"
+    >
+      <div
+        style="grid-area: head;"
+        class="flex items-center justify-center bg-rosewater text-base bg-[url('/images/dit.png')] bg-cover bg-no-repeat"
+      >
+        <span>bitbyte</span>
+      </div>
       <Navigation />
       <Header title={title} greet={greet} />
-      <main style="grid-area: content;" class="p-2"><slot style="grid-area: content;"></main>
+      <main
+        style="grid-area: content;"
+        class="p-2 overflow-x-hidden overflow-y-scroll text-pretty"
+      >
+        <slot style="grid-area: content;" />
+      </main>
       <Footer />
     </div>
-	</body>
+  </body>
+  <style is:global>
+    @font-face {
+      font-family: "Terminal";
+      src: url("/fonts/terminal-grotesque-webfont.eot");
+      src:
+        url("/fonts/terminal-grotesque-webfont.eot?#iefix")
+          format("embedded-opentype"),
+        url("/fonts/terminal-grotesque-webfont.woff2") format("woff2"),
+        url("/fonts/terminal-grotesque-webfont.woff") format("woff"),
+        url("/fonts/terminal-grotesque-webfont.ttf") format("truetype"),
+        url("/fonts/terminal-grotesque-webfont.svg#terminal_grotesqueregular")
+          format("svg");
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @keyframes moveBackground {
+      0% {
+        background-position: 0 0;
+      }
+
+      100% {
+        background-position: -100vw 100vh;
+      }
+    }
+
+    html {
+      font-family: "Terminal", system-ui, sans-serif;
+      font-size: 20px;
+      background-color: #424266;
+      letter-spacing: 0.5px;
+    }
+
+    @media (min-width: 640px) {
+      html {
+        background-size: 150vw 150vh;
+        background-repeat: repeat;
+        animation: moveBackground 30s linear infinite;
+        background-image: url("/images/ditther.png");
+      }
+    }
+
+    code {
+      font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+    }
+
+    .frame {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 50px minmax(50px, auto) minmax(40px, auto) 1fr 50px;
+      grid-template-areas:
+        "head"
+        "navigation"
+        "title"
+        "content"
+        "footer";
+    }
+
+    @media (min-width: 1024px) {
+      .frame {
+        background-size: 150vw 150vh;
+        background-repeat: repeat;
+        animation: moveBackground 30s linear infinite;
+        background-image: url("/images/ditther.png");
+      }
+    }
+  </style>
 </html>
-<style is:global>
-  @font-face {
-    font-family: "Terminal";
-    src: url("/fonts/terminal-grotesque-webfont.eot");
-    src: url("/fonts/terminal-grotesque-webfont.eot?#iefix")
-        format("embedded-opentype"),
-      url("/fonts/terminal-grotesque-webfont.woff2") format("woff2"),
-      url("/fonts/terminal-grotesque-webfont.woff") format("woff"),
-      url("/fonts/terminal-grotesque-webfont.ttf") format("truetype"),
-      url("/fonts/terminal-grotesque-webfont.svg#terminal_grotesqueregular")
-        format("svg");
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @keyframes moveBackground {
-    0% {
-      background-position: 0 0;
-    }
-
-    100% {
-      background-position: -100vw 100vh;
-    }
-  }
-
-  html {
-    font-family: "Terminal", system-ui, sans-serif;
-    font-size: 20px;
-    background-image: url('/images/ditther.png');
-    background-color: #424266;
-    background-size: 150vw 150vh;
-    background-repeat: repeat;
-    animation: moveBackground 30s linear infinite;
-	}
-
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-
-	}
-  .frame {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: minmax(50px, auto) minmax(70px, auto) 1fr 100px;
-    grid-template-areas:
-      "navigation"
-      "title"
-      "content"
-      "footer";
-  }
-</style>
