@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         rosewater: '#f4c8a5',
+        poison: '#13001b',
         flamingo: '#f2cdcd',
         brid: '#EDCDBB',
         pink: '#f5c2e7',
@@ -33,7 +34,7 @@ export default {
         crust: '#11111b',
       },
       boxShadow: {
-        rosewater: '15px 10px #f4c8a5'
+        rose: '15px 15px hsl(30, 77%, 80%)'
       }
     },
   },
