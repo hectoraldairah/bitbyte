@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import { Prism } from "@astrojs/prism";
+import logo from "../../images/ball.gif";
+import { getLangFromUrl } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+const goCode = `
+const whoami = {
+    name: 'Hector Aldair Aguilar',
+    alias: 'bitbyte',
+    website: 'https://bitbyte.blog',
+    ocuppation: 'Software Enginner at Clip',
+    languages: ['Javascript', 'Typescript', 'HTML', 'CSS', 'Python', "Golang"],
+    frameworks: ['React', 'Vue', 'Next.js'],
+    interest: ['Web Development', 'Open Source', 'Linguistics', 'Gym']
+    learning: ['Go', 'Elixir', 'Rust', 'Esperanton']
+}
+`;
+---
+
+<Layout title="Home" greet="Bienvenido a mi espacio">
+  <div class="max-w-2xl">
+    <div class="inline-flex items-center mt-10">
+      <Image src={logo} alt="Logo" width={80} />
+      <span class="text-rosewater text-6xl underline ml-4">
+        <a href={`/${lang}/`}>bitbyte.blog</a>
+      </span>
+    </div>
+    <div class="mt-6 space-y-4">
+      <p>
+        Hola, Soy Héctor, ingeniero de software con una pasión por el desarrollo
+        web.
+      </p>
+      <p>
+        Bievenido a mi sitio web, un espacio personal donde puedes leer acerca
+        de mis experiencias mientras aprendo nuevas cosas. Estoy aprendiendo Go,
+        Elixir, y como mejorar como desarrollador front-end.
+      </p>
+      <p>Laboro en <a target="_blank" href="https://clip.mx">Clip.</a></p>
+    </div>
+  </div>
+  <Prism class="max-w-4xl" lang="js" code={goCode} />
+
+  <div class="flex">
+    <iframe
+      style="border-radius:12px"
+      src="https://open.spotify.com/embed/playlist/1ozrtpqSepXcgL35roVPKQ?utm_source=generator&theme=0"
+      width="100%"
+      height="352"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"></iframe>
+  </div>
+</Layout>
