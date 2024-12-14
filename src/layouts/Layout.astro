@@ -57,13 +57,15 @@ const lang = getLangFromUrl(Astro.url);
       }
     </style>
   </head>
-  <body class="flex items-center justify-center min-h-screen">
+  <body
+    class="flex items-center justify-center min-h-screen selection:bg-surface1"
+  >
     <div
-      class="frame text-text bg-poison bg-opacity-75 w-[100vw] h-[100vh] shadow-rose md:rounded-t-lg overflow-hidden border-rosewater md:border-2 md:w-[85vw] md:h-[85vh]"
+      class="frame text-text bg-cat w-[100vw] h-[100vh] shadow-rose md:rounded-t-lg overflow-hidden border-rosewater md:border-2 md:w-[85vw] md:h-[85vh]"
     >
       <div
         style="grid-area: head;"
-        class="flex items-center justify-center bg-rosewater text-base bg-[url('/images/dit.png')] bg-cover bg-no-repeat"
+        class="flex items-center justify-center bg-rosewater text-cat bg-[url('/images/dit.png')] bg-cover bg-no-repeat"
       >
         <span class="text-xl">bitbyte</span>
       </div>

@@ -23,7 +23,7 @@ const images = [
   {
     images.map(({ src, alt }) => (
       <div class="max-w-16">
-        <Image src={src} alt={alt} />
+        <Image loading="eager" src={src} alt={alt} />
       </div>
     ))
   }

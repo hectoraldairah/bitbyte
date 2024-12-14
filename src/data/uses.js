@@ -40,7 +40,6 @@ const setupData = {
       },
     ],
     browserExtensions: [
-      { name: "1Password", description: "" },
       {
         name: "Font Ninja",
         description: "Check website fonts",

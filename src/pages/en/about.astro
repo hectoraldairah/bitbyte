@@ -10,7 +10,13 @@ const lang = getLangFromUrl(Astro.url);
 
 <Layout title="about" greet="we know each other?">
   <div class="max-w-2xl mt-2">
-    <Image src={me} height={400} class="object-cover" alt="A picture of me" />
+    <Image
+      loading="eager"
+      src={me}
+      height={400}
+      class="object-cover"
+      alt="A picture of me"
+    />
   </div>
 
   <div class="max-w-xl mt-10 space-y-5 mb-5">
