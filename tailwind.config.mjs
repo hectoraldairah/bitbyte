@@ -29,7 +29,7 @@ export default {
         surface2: '#585b70',
         surface1: '#45475a',
         surface0: '#313244',
-        base: '#1e1e2e',
+        cat: '#1e1e2e',
         mantle: '#181825',
         crust: '#11111b',
       },
