@@ -1,5 +1,52 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import me from "../../images/canvas.png";
+
+import { getLangFromUrl } from "../../i18n/utils.ts";
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
-<Layout title="about" greet="know me better"> asdasd </Layout>
+<Layout title="about" greet="we know each other?">
+  <div class="max-w-2xl mt-2">
+    <Image src={me} height={400} class="object-cover" alt="A picture of me" />
+  </div>
+
+  <div class="max-w-xl mt-10 space-y-5 mb-5">
+    <p>
+      My name is Héctor Aldair Aguilar. I'm a front-end developer who enjoys
+      making websites. I love the web with all its weirdness.
+    </p>
+    <p>
+      This is just my little personal place on the web where I post some stuff
+      that I learn over the years, book recommendations, and logs from the gym
+      exercises
+    </p>
+    <p>This website will be constantly changing over time and that's funny.</p>
+    <p>
+      Right now, I'm working with Design Systems and making the web accessible
+      for everyone
+    </p>
+    <h3 class="text-4xl">Work</h3>
+    <p>
+      I work at <a href="https://clip.mx" target="_blank">Clip</a>
+      as a Senior Software Engineer. React is my bread and butter, but I enjoy working
+      on the fullstack side too.
+    </p>
+    <h3 class="text-4xl">Offline</h3>
+    <p>
+      When I'm not writing code, I enjoy going to the gym, cooking and learning
+      about gastronomy. Recently I started to get in to <a
+        href=`/${lang}/pixelart`>pixel art.</a
+      >
+    </p>
+
+    <h3 class="text-4xl">Lets get in touch</h3>
+    <ul class="list-disc list-inside">
+      <li><a href="https://codepen.io" target="_blank">CodePen</a></li>
+      <li><a href="https://github.com" target="_blank">GitHub</a></li>
+      <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+    </ul>
+  </div>
+</Layout>

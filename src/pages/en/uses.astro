@@ -1,0 +1,109 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import setupData from "../../data/uses";
+---
+
+<Layout title="Uses" greet="this will help u">
+  <section class="space-y-4 mb-5">
+    <h1 class="text-4xl">Setup</h1>
+    <h2 class="text-3xl">Hardware</h2>
+    <ul class="list-disc list-inside" class="list-disc list-inside">
+      {
+        setupData.hardware.map((item) => (
+          <li>
+            <strong>{item.name}</strong>: {item.description}{" "}
+            {item.link && <a href={item.link}>[Link]</a>}
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2 class="text-3xl">Apps</h2>
+
+    <h3>General</h3>
+    <ul class="list-disc list-inside">
+      {
+        setupData.apps.general.map((item) => (
+          <li>
+            <strong>{item.name}</strong>: {item.description}{" "}
+            {item.link && <a href={item.link}>[Link]</a>}
+          </li>
+        ))
+      }
+    </ul>
+
+    <h3>Development</h3>
+    <ul class="list-disc list-inside">
+      {
+        setupData.apps.development.map((item) => (
+          <li>
+            <strong>{item.name}</strong>: {item.description}{" "}
+            {item.link && <a href={item.link}>[Link]</a>}
+          </li>
+        ))
+      }
+    </ul>
+
+    <h3>Browser Extensions</h3>
+    <ul class="list-disc list-inside">
+      {
+        setupData.apps.browserExtensions.map((item) => (
+          <li>
+            <strong>{item.name}</strong>: {item.description}{" "}
+            {item.link && <a href={item.link}>[Link]</a>}
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2 class="text-3xl">Developer Tools</h2>
+
+    <h3>Package Management</h3>
+    <ul class="list-disc list-inside">
+      {
+        setupData.developerTools.packageManagement.map((item) => (
+          <li>
+            <strong>{item.name}</strong>: {item.description}{" "}
+            {item.link && <a href={item.link}>[Link]</a>}
+          </li>
+        ))
+      }
+    </ul>
+
+    <h3>Shell</h3>
+    <ul class="list-disc list-inside">
+      {
+        setupData.developerTools.shell.map((item) => (
+          <li>
+            <strong>{item.name}</strong>: {item.description}{" "}
+            {item.link && <a href={item.link}>[Link]</a>}
+          </li>
+        ))
+      }
+    </ul>
+
+    <h3>Desktop Environment</h3>
+    <ul class="list-disc list-inside">
+      {
+        setupData.developerTools.desktopEnvironment.map((item) => (
+          <li>
+            <strong>{item.name}</strong>: {item.description}{" "}
+            {item.link && <a href={item.link}>[Link]</a>}
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2 class="text-3xl">Gaming</h2>
+    <ul class="list-disc list-inside">
+      {
+        setupData.gaming.map((item) => (
+          <li>
+            <strong>{item.name}</strong>: {item.description}{" "}
+            {item.link && <a href={item.link}>[Link]</a>}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>
