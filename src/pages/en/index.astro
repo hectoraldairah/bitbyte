@@ -21,7 +21,7 @@ const whoami = {
 `;
 ---
 
-<Layout title="Home" greet="Welcome to my cozy site">
+<Layout title="hello" greet="welcome to my cozzy site">
   <div class="max-w-2xl">
     <div class="inline-flex items-center mt-10">
       <Image loading="eager" src={logo} alt="Logo" width={80} />
@@ -41,15 +41,13 @@ const whoami = {
       <p>Currently working at <a href="www.clip.com.mx">Clip.</a></p>
     </div>
   </div>
-  <Prism class="max-w-4xl" lang="js" code={goCode} />
-  <div class="flex">
-    <iframe
-      style="border-radius:12px"
-      src="https://open.spotify.com/embed/playlist/1ozrtpqSepXcgL35roVPKQ?utm_source=generator&theme=0"
-      width="100%"
-      height="352"
-      allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy"></iframe>
-  </div>
+  <!--<Prism class="max-w-4xl" lang="js" code={goCode} />-->
+
+  <h3 class="mt-5">Socials</h3>
+  <ul class="flex flex-wrap gap-3">
+    <li><a href="" target="_blank">LinkedIn</a></li>
+    <li><a href="" target="_blank">Github</a></li>
+    <li><a href="" target="_blank">Mastodon</a></li>
+    <li><a href="" target="_blank">BlueSky</a></li>
+  </ul>
 </Layout>
