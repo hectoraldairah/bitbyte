@@ -73,7 +73,7 @@ const lang = getLangFromUrl(Astro.url);
       <Header title={title} greet={greet} />
       <main
         style="grid-area: content;"
-        class="p-2 overflow-x-hidden overflow-y-scroll container mx-auto px-5 text-pretty"
+        class="p-2 overflow-x-hidden overflow-y-auto container mx-auto px-5 text-pretty"
       >
         <slot style="grid-area: content;" />
       </main>
