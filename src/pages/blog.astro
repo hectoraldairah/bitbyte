@@ -1,12 +1,12 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
 import { format } from "date-fns";
 
 const blogPosts = (
   await getCollection("blog", (post) => post.id.startsWith("en"))
 ).reverse();
-console.log(blogPosts)
+console.log(blogPosts);
 ---
 
 <Layout title="blog" greet="write for the mind and soul">
@@ -16,7 +16,7 @@ console.log(blogPosts)
       blogPosts.map((post) => (
         <li>
           <div class="flex flex-wrap items-baseline gap-2">
-            <a class="w-max" href={`${post.slug}`}>
+            <a class="w-max" href={`blog/${post.slug}`}>
               {post.data.title}
             </a>{" "}
             ::{" "}
