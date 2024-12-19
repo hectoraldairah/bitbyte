@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import logo from "../images/ball.gif";
+---
+
+<Layout title="hello" greet="welcome to my cozzy site">
+  <div class="max-w-2xl">
+    <div class="inline-flex items-center mt-10">
+      <Image loading="eager" src={logo} alt="Logo" width={80} />
+      <span class="text-rosewater text-6xl underline ml-4">
+        <a href="/">bitbyte.blog</a>
+      </span>
+    </div>
+    <div class="mt-6 space-y-4">
+      <p>
+        Hi, I'm Héctor, a Software Engineer with a passion for web development.
+      </p>
+      <p>
+        Welcome to my website, a personal space where you can read about my
+        experiences as I learn new things. I'm currently exploring Go, Elixir,
+        and improving as a Front-End developer.
+      </p>
+      <p>Currently working at <a target="_blank" href="https://www.clip.com.mx">Clip.</a></p>
+    </div>
+  </div>
+  <ul class="flex flex-wrap gap-3 mt-5">
+    <li><a href="https://www.linkedin.com/in/hectoraldairaguilar" target="_blank">LinkedIn</a></li>
+    <li><a href="https://github.com/hectoraldairah" target="_blank">Github</a></li>
+    <li><a href="https://bsky.app/profile/bitbytes.bsky.social" target="_blank">BlueSky</a></li>
+  </ul>
+</Layout>

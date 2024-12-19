@@ -1,21 +1,25 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import { getLangFromUrl, useTranslations, useTranslatedPath } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 ---
 
 <nav
   style="grid-area: navigation;"
   class="border-text border-dotted border-b lowercase flex md:flex-col md:justify-start md:items-start flex-wrap justify-center space-x-4 md:space-x-0 md:space-y-4 md:px-5 md:pt-12 md:border-r items-center"
 >
-  <a href={`/${lang}/`} class="p-1 hover:bg-rosewater hover:text-crust"
+  <a href={`${translatePath('/home')}`} class="p-1 hover:bg-rosewater hover:text-crust"
     >{t("nav.home")}</a
   >
-  <a href={`/${lang}/about`} class="p-1 hover:bg-rosewater hover:text-crust"
+  <a href={`${translatePath('/blog')}`} class="p-1 hover:bg-rosewater hover:text-crust"
+    >{t("nav.blog")}</a
+  >
+  <a href={`${translatePath('/about')}`} class="p-1 hover:bg-rosewater hover:text-crust"
     >{t("nav.about")}</a
   >
-  <a href={`/${lang}/uses`} class="p-1 hover:bg-rosewater hover:text-crust"
+  <a href={`/uses`} class="p-1 hover:bg-rosewater hover:text-crust"
     >{t("nav.uses")}</a
   >
 </nav>

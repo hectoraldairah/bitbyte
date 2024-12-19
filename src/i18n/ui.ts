@@ -25,3 +25,5 @@ export const ui = {
     'nav.uses': 'Usa',
   },
 } as const;
+
+export const showDefaultLang = false;

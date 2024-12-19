@@ -80,6 +80,22 @@ const lang = getLangFromUrl(Astro.url);
       <Footer />
     </div>
   </body><style is:global>
+    * {
+      scroll-behavior: smooth;
+    }
+    ::-webkit-scrollbar {
+      @apply bg-blue;
+      width: 15px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      @apply bg-text;
+    }
+
     @keyframes moveBackground {
       0% {
         background-position: 0 0;
