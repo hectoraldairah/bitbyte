@@ -1,9 +1,9 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import me from "../../images/canvas.png";
 
-import { getLangFromUrl } from "../../i18n/utils.ts";
+import { getLangFromUrl } from "../i18n/utils.ts";
 
 const lang = getLangFromUrl(Astro.url);
 ---

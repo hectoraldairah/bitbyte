@@ -1,0 +1,31 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import { format } from "date-fns";
+
+const blogPosts = (
+  await getCollection("blog", (post) => post.id.startsWith("en"))
+).reverse();
+console.log(blogPosts)
+---
+
+<Layout title="blog" greet="write for the mind and soul">
+  <h1 class="text-3xl mt-2">Posts</h1>
+  <ul class="space-y-3 mt-2">
+    {
+      blogPosts.map((post) => (
+        <li>
+          <div class="flex flex-wrap items-baseline gap-2">
+            <a class="w-max" href={`${post.slug}`}>
+              {post.data.title}
+            </a>{" "}
+            ::{" "}
+            <time class="text-base" datetime={post.data.date.toString()}>
+              {format(new Date(post.data.date.toString()), "yyyy MMM d")}
+            </time>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

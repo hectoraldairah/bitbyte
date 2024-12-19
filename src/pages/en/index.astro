@@ -1,24 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../../layouts/Layout.astro";
-import { Prism } from "@astrojs/prism";
 import logo from "../../images/ball.gif";
 import { getLangFromUrl } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-
-const goCode = `
-const whoami = {
-    name: 'Hector Aldair Aguilar',
-    alias: 'bitbyte',
-    website: 'https://bitbyte.blog',
-    ocuppation: 'Software Enginner at Clip',
-    languages: ['Javascript', 'Typescript', 'HTML', 'CSS', 'Python', "Golang"],
-    frameworks: ['React', 'Vue', 'Next.js'],
-    interest: ['Web Development', 'Open Source', 'Linguistics', 'Gym']
-    learning: ['Go', 'Elixir', 'Rust', 'Esperanton']
-}
-`;
 ---
 
 <Layout title="hello" greet="welcome to my cozzy site">
@@ -38,16 +24,14 @@ const whoami = {
         experiences as I learn new things. I'm currently exploring Go, Elixir,
         and improving as a Front-End developer.
       </p>
-      <p>Currently working at <a href="www.clip.com.mx">Clip.</a></p>
+      <p>Currently working at <a target="_blank" href="https://www.clip.com.mx">Clip.</a></p>
     </div>
   </div>
   <!--<Prism class="max-w-4xl" lang="js" code={goCode} />-->
-
   <h3 class="mt-5">Socials</h3>
   <ul class="flex flex-wrap gap-3">
-    <li><a href="" target="_blank">LinkedIn</a></li>
-    <li><a href="" target="_blank">Github</a></li>
-    <li><a href="" target="_blank">Mastodon</a></li>
-    <li><a href="" target="_blank">BlueSky</a></li>
+    <li><a href="https://www.linkedin.com/in/hectoraldairaguilar" target="_blank">LinkedIn</a></li>
+    <li><a href="https://github.com/hectoraldairah" target="_blank">Github</a></li>
+    <li><a href="https://bsky.app/profile/bitbytes.bsky.social" target="_blank">BlueSky</a></li>
   </ul>
 </Layout>
