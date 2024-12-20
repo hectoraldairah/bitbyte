@@ -3,13 +3,19 @@ title: My nvim config 2022
 date: 2022-08-06
 description: A collection of plugins that I use for nvim
 tags: ['nvim', 'tools', 'programming']
+
 ---
+import { Image } from 'astro:assets';
+import telescope from '../../images/tele.gif'
+import tree from '../../images/nvimtree.gif'
+import float from '../../images/floatterm.gif'
+
 
 I've been using the vim/nvim ecosystem for more than a year and I just love it.
 Using NVIM improved my workflow so much after I learned the basics of it and how to properly create a base configuration.
 
 It's not so much hard to use despite the **insanely amount** of memes on Twitter. Please, stop with the exit vim joke is not funny anymore.
-<br>
+
 I'll write a post about some programming jokes that aged like milk.
 
 ## Lua is love ♡
@@ -36,7 +42,7 @@ This is one of the plugins I use the most, one of the best fuzzy finders around 
 
 I like how fast it is and a lot of the options that you can configure with it. Search by file or by a regex expression with a nice UI and a lot of color-schemes are supported.
 
-![telescope](../../assets/images/tele.gif)
+<Image src={telescope} alt="Telescope gif animation" />
 
 Try it: [Telescope plugin](https://github.com/nvim-telescope/telescope.nvim)
 
@@ -45,9 +51,10 @@ Try it: [Telescope plugin](https://github.com/nvim-telescope/telescope.nvim)
 I see it as the [NERDTree](https://github.com/preservim/nerdtree) improved, very light and blazingly fast.
 You can use web-dev-icons. Extremely configurable but no overwhelming.
 
-It's easy to learn all the keybindings, wanna add a new file? Just type a, edit? e, open? o. So simple and intuitive
+It's easy to learn all the keybindings, wanna add a new file? Just type a, edit? e, open? o. So simple and intuitive.
 
-![telescope](../../assets/images/nvimtree.gif)
+
+<Image src={tree} alt="Nvim tree gif animation" />
 
 Try it: [nvim-tree plugin](https://github.com/kyazdani42/nvim-tree.lua)
 
@@ -58,6 +65,7 @@ This is very helpful because you can have a lot of cool features for your favori
 
 The list of supported languages is huge and a lot of new features are being added to nvim.
 
+
 Try it: [nvim-tree-sitter plugin](https://github.com/nvim-treesitter/nvim-treesitter)
 
 ### Float Term
@@ -67,7 +75,8 @@ I just open a new float term. Float term is just a terminal but... floating in y
 
 You can have a lot of float terms opened but one is just enough for me. The easy access is hot.
 
-![Float Term](../../assets/images/floatterm.gif)
+
+<Image src={float} alt="Float term animation" />
 
 Try it: [Float Term plugin](https://github.com/voldikss/vim-floaterm)
 
@@ -77,9 +86,9 @@ Those are my most "showy" plugins. I use a lot more but are just for tiny things
 I strongly suggest that you vim config should be minimal as you can to get a faster start and use Lua instead of vimrc. This will make your
 life easier and happier.
 
-If you wanna see all my nvim config you can check my repo
+If you wanna see all my nvim config you can check my repo...
 [nvim configuration](https://github.com/hectoraldairah/nvim-config)
 
 It's not that fancy so maybe you can understand everything there.
 
-Well, that it! I know for sure that this plugins list will be changing over time but I will stay with the philosphy of less is more
+Well, that it! I know for sure that this plugins list will be changing over time but I will stay with the philosphy of less is more.

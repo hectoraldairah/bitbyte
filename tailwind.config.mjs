@@ -3,6 +3,15 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            'ol > li::marker': {
+              color: '#f4c8a5',
+            },
+          }
+        }
+      },
       colors: {
         rosewater: '#f4c8a5',
         poison: '#13001b',
@@ -38,5 +47,7 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
