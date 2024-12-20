@@ -12,10 +12,10 @@ const blogPosts = (
   <h1 class="text-3xl mt-2">Posts</h1>
   <ul class="space-y-3 mt-2">
     {
-      blogPosts.map((post) => (
+      blogPosts.map((post: any) => (
         <li>
           <div class="flex flex-wrap items-baseline gap-2">
-            <a class="w-max" href={`${post.id}`}>
+            <a class="w-max" href={`${post.slug}`}>
               {post.data.title}
             </a>{" "}
             ::{" "}
