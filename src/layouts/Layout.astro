@@ -1,5 +1,6 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
+
 
 interface Props {
   title: string;
@@ -34,7 +35,7 @@ const lang = getLangFromUrl(Astro.url);
     <link rel="stylesheet" href="/css/prism-laserwave.css" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
     <style>
       @font-face {
         font-family: "Terminal";
