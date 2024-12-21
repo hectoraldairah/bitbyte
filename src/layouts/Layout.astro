@@ -1,7 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
 
-
 interface Props {
   title: string;
   greet: string;
@@ -62,7 +61,7 @@ const lang = getLangFromUrl(Astro.url);
     class="flex items-center justify-center min-h-screen selection:bg-surface1"
   >
     <div
-      class="frame text-text bg-cat w-[100vw] h-[100vh] shadow-rose md:rounded-t-lg overflow-hidden border-rosewater md:border-2 md:w-[min(85vw,90vh)] md:h-[min(85vw,90vh)]"
+      class="frame text-text bg-cat w-[100vw] h-[100vh] shadow-rose md:rounded-t-lg overflow-hidden border-rosewater md:border-2 md:w-[min(85vw,200vh)] md:h-[min(85vw,85vh)]"
     >
       <div
         style="grid-area: head;"
@@ -98,6 +97,7 @@ const lang = getLangFromUrl(Astro.url);
     }
 
     html {
+      font-size: 21px;
     }
 
     @keyframes moveBackground {
@@ -111,7 +111,7 @@ const lang = getLangFromUrl(Astro.url);
     }
 
     body {
-      font-size: 21px;
+      font-size: 1.025rem;
       background-color: #424266;
       letter-spacing: 0.5px;
     }
