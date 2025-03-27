@@ -6,9 +6,8 @@ interface Props {
   greet: string;
 }
 
-const { title, greet } = Astro.props;
+const { title } = Astro.props;
 
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
 import { getLangFromUrl } from "../i18n/utils";
@@ -61,7 +60,7 @@ const lang = getLangFromUrl(Astro.url);
     class="flex items-center justify-center min-h-screen selection:bg-surface1"
   >
     <div
-      class="frame text-text bg-cat w-[100vw] h-[100vh] shadow-rose md:rounded-t-lg overflow-hidden border-rosewater md:border-2 md:w-[min(85vw,200vh)] md:h-[min(90vw,90vh)] md:aspect-[1/1]"
+      class="frame text-text bg-cat w-[100vw] h-[100vh] shadow-rose md:rounded-t-lg overflow-hidden border-rosewater md:border-2 md:w-[min(85vw,85vh)] md:h-[min(85vw,85vh)] md:aspect-square"
     >
       <div
         style="grid-area: head;"
@@ -70,11 +69,11 @@ const lang = getLangFromUrl(Astro.url);
         <span class="text-xl">bitbyte</span>
       </div>
       <Navigation />
-      <Header title={title} greet={greet} />
       <main
         style="grid-area: content;"
         class="p-2 overflow-x-hidden overflow-y-auto container mx-auto px-5 text-pretty"
       >
+
         <slot style="grid-area: content;" />
       </main>
       <Footer />
@@ -156,10 +155,9 @@ const lang = getLangFromUrl(Astro.url);
     @media (min-width: 1024px) {
       .frame {
         grid-template-columns: 150px 1fr;
-        grid-template-rows: 50px minmax(80px, auto) 1fr 80px;
+        grid-template-rows: 50px 1fr 80px;
         grid-template-areas:
           "head head"
-          "navigation title"
           "navigation content"
           "navigation footer";
       }
